@@ -1,0 +1,6 @@
+D:\DOCS\DTU\2nd sem\Program Analysis\ProgramAnalysisLanguage\SqlParsing\bin\Release\SqlParsing.XML
+D:\DOCS\DTU\2nd sem\Program Analysis\ProgramAnalysisLanguage\SqlParsing\bin\Release\SqlParsing.exe
+D:\DOCS\DTU\2nd sem\Program Analysis\ProgramAnalysisLanguage\SqlParsing\bin\Release\SqlParsing.pdb
+D:\DOCS\DTU\2nd sem\Program Analysis\ProgramAnalysisLanguage\SqlParsing\obj\x86\Release\ResolveAssemblyReference.cache
+D:\DOCS\DTU\2nd sem\Program Analysis\ProgramAnalysisLanguage\SqlParsing\obj\x86\Release\SqlParsing.exe
+D:\DOCS\DTU\2nd sem\Program Analysis\ProgramAnalysisLanguage\SqlParsing\obj\x86\Release\SqlParsing.pdb

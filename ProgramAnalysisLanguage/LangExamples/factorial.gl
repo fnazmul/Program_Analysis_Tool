@@ -1,0 +1,7 @@
+module factorial:
+read x;
+y := 1;
+do x>0 -> {y := y*x; x := x-1}
+od;
+write y
+end

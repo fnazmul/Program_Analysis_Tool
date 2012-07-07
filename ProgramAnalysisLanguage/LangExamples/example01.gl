@@ -1,0 +1,7 @@
+module test:
+read x;
+read y;
+if true -> x:=x+2 
+[] x>2 -> write y
+fi
+end

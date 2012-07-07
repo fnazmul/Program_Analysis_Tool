@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/repositories/LBTusers/!svn/ver/540/pifi/TA/2010/02242/ProgramAnalysisLanguage/ProgramAnalysisLanguage
+END
+ProgramAnalysisLanguage.fsproj
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/repositories/LBTusers/!svn/ver/540/pifi/TA/2010/02242/ProgramAnalysisLanguage/ProgramAnalysisLanguage/ProgramAnalysisLanguage.fsproj
+END
+LangLexer.fsl
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/repositories/LBTusers/!svn/ver/540/pifi/TA/2010/02242/ProgramAnalysisLanguage/ProgramAnalysisLanguage/LangLexer.fsl
+END
+LangParser.fs
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/repositories/LBTusers/!svn/ver/608/pifi/TA/2010/02242/ProgramAnalysisLanguage/ProgramAnalysisLanguage/LangParser.fs
+END
+LangParser.fsp
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/repositories/LBTusers/!svn/ver/608/pifi/TA/2010/02242/ProgramAnalysisLanguage/ProgramAnalysisLanguage/LangParser.fsp
+END
+Lang.fs
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/repositories/LBTusers/!svn/ver/608/pifi/TA/2010/02242/ProgramAnalysisLanguage/ProgramAnalysisLanguage/Lang.fs
+END
+LangLexer.fs
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repositories/LBTusers/!svn/ver/540/pifi/TA/2010/02242/ProgramAnalysisLanguage/ProgramAnalysisLanguage/LangLexer.fs
+END
+LangParser.fsi
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/repositories/LBTusers/!svn/ver/540/pifi/TA/2010/02242/ProgramAnalysisLanguage/ProgramAnalysisLanguage/LangParser.fsi
+END
+Program.fs
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/repositories/LBTusers/!svn/ver/576/pifi/TA/2010/02242/ProgramAnalysisLanguage/ProgramAnalysisLanguage/Program.fs
+END

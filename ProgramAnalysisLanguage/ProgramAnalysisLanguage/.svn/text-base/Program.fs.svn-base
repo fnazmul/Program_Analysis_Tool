@@ -1,0 +1,20 @@
+﻿open System
+
+let parseFormString (whileProg:string) =
+    let lexbuf = Lexing.LexBuffer<byte>.FromBytes (System.Text.Encoding.ASCII.GetBytes(whileProg))
+    printfn "%A" lexbuf.EndPos
+    LangParser.start LangLexer.tokenize lexbuf
+
+let parseFromFile inputFilePath =
+    use stream = System.IO.File.OpenRead(inputFilePath)
+    use reader = new System.IO.BinaryReader(stream)
+    let lexbuf = Lexing.LexBuffer<byte>.FromBinaryReader reader
+    LangParser.start LangLexer.tokenize lexbuf
+
+parseFromFile @"g:\gcd.gl" 
+|> printfn "%A"
+
+parseFormString "module test: read x; abort; skip; x:=x/2; write x end"
+|> printfn "%A"
+
+Console.ReadKey() |> ignore

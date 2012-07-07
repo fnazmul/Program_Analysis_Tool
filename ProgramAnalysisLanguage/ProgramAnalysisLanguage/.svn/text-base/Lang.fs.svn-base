@@ -1,0 +1,45 @@
+﻿module Lang
+
+open System
+
+type Var = string
+type Int = int
+type Lab = int
+
+type Program = 
+    | Program of string * Cmd
+
+and Cmd =
+    | Skip of Lab
+    | Abort of Lab
+    | Read of Var * Lab
+    | Write of Expr * Lab
+    | Asgn of Var * Expr * Lab
+    | Seq of Cmd * Cmd
+    | Block of Cmd
+    | If of GuardedCmd
+    | Do of GuardedCmd
+
+and GuardedCmd =
+    | SingleGuard of Expr * Lab * Cmd
+    | ComplexGuard of GuardedCmd * GuardedCmd 
+
+and Expr =
+    | True
+    | False
+    | Var of string
+    | Int of int
+    | Add of Expr * Expr
+    | Sub of Expr * Expr
+    | Mul of Expr * Expr
+    | Div of Expr * Expr
+    | Or of Expr * Expr
+    | And of Expr * Expr
+    | Not of Expr
+    | Minus of Expr
+    | Gtn of Expr * Expr
+    | Ltn of Expr * Expr    
+    | Eq of Expr * Expr
+    | Neq of Expr * Expr
+    | Geq of Expr * Expr
+    | Leq of Expr * Expr 

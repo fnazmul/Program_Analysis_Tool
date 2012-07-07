@@ -1,0 +1,8 @@
+module max:
+read x;
+read y;
+if x>=y -> max := x
+[] y>=x -> max := y
+fi;
+write max
+end

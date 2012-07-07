@@ -1,0 +1,63 @@
+﻿%{
+open System
+open Lang
+let currentLabel = ref 0
+let labelCmd() =
+   let tmp = !currentLabel
+   incr currentLabel
+   tmp
+%}
+
+%token <string> ID
+%token <int> NUMBER
+%token OR AND ADD DIV MUL NOT MINUS EQ LTN GTN NEQ LEQ GEQ DO IF ASGN COLON
+%token OD FI LPAREN RPAREN LBRACK RBRACK GUARD MODULE END SEMICOLON ARROW SKIP 
+%token ABORT READ WRITE TRUE FALSE
+%token EOF
+
+// start
+%start start
+%type <Program> start
+%type <Cmd> Command
+%%
+
+start: LangProgram { $1 }
+
+LangProgram: MODULE ID COLON Command END { Program($2, $4) }
+
+Command:
+	| ID ASGN Expression {Asgn($1, $3, labelCmd())}
+	| SKIP { Skip(labelCmd()) }
+	| ABORT { Abort(labelCmd()) }
+	| READ ID { Read($2, labelCmd()) }
+	| WRITE Expression { Write($2, labelCmd()) }
+	| Command SEMICOLON Command { Seq($1, $3) }
+	| LBRACK Command RBRACK { $2 }
+	| DO GCmd OD { Do($2) }
+	| IF GCmd FI { If($2) }
+
+GCmd:
+	| Expression ARROW Command { SingleGuard($1,labelCmd(),$3) }
+	| GCmd GUARD GCmd { ComplexGuard($1,$3) }
+
+Expression:
+    | ID { Var($1) }
+    | NUMBER { Int($1) }
+	| TRUE { True }
+	| FALSE { False }
+	| LPAREN Expression RPAREN { $2 }
+    | Expression ADD Expression { Add($1, $3) }
+    | Expression MINUS Expression { Sub($1, $3) }
+    | Expression MUL Expression { Mul($1, $3) }
+    | Expression DIV Expression { Div($1, $3) }
+    | Expression OR Expression { Or($1, $3) }
+    | Expression AND Expression { And($1, $3) }
+    | NOT Expression { Not($2) }
+	| MINUS Expression { Minus($2) }
+    | Expression GTN Expression { Gtn($1, $3) }
+    | Expression LTN Expression { Ltn($1, $3) }
+	| Expression GEQ Expression { Geq($1, $3) }
+    | Expression LEQ Expression { Leq($1, $3) }
+	| Expression EQ Expression { Eq($1, $3) }
+    | Expression NEQ Expression { Neq($1, $3) }
+%%

@@ -1,0 +1,1069 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly><name>ProgramAnalysisLanguage</name></assembly>
+<members>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:BlockDefinition.Guard">
+<summary>
+ Type for guard block
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:BlockDefinition.Assignment">
+<summary>
+ Type for assignment block
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:BlockDefinition.Write">
+<summary>
+ Type for write block
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:BlockDefinition.Read">
+<summary>
+ Type for read block
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:BlockDefinition.Abort">
+<summary>
+ Type for abort block
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:BlockDefinition.Skip">
+<summary>
+ Type for skip block
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:BlockDefinition.Block">
+<summary>
+ type for a basic block
+</summary>
+</member>
+<member name="T:BlockDefinition">
+
+</member>
+<member name="M:BlockGenerator.clearDataHandlers">
+<summary>
+ function for clearing the data structures
+</summary>
+</member>
+<member name="M:BlockGenerator.generateProgramBlocks(Lang.Program)">
+<summary>
+ functiong to parse the program and generate blocks by calling analyzeCommand
+</summary>
+</member>
+<member name="M:BlockGenerator.reverseFlow(System.Collections.Generic.Dictionary{System.Int32,BlockDefinition.Block})">
+<summary>
+ function to generate reverse flow sequence of int*int
+</summary>
+</member>
+<member name="M:BlockGenerator.forwardFlow(System.Collections.Generic.Dictionary{System.Int32,BlockDefinition.Block})">
+<summary>
+ function to generate forward flow sequence of int*int
+</summary>
+</member>
+<member name="M:BlockGenerator.generateExitSet">
+<summary>
+ function to generate exit set
+</summary>
+</member>
+<member name="M:BlockGenerator.analyzeCommand(Lang.Cmd,Microsoft.FSharp.Collections.FSharpSet{System.Int32})">
+<summary>
+ function to find out the type of the command
+</summary>
+</member>
+<member name="M:BlockGenerator.analyzeBlockCommand(Lang.Cmd,Microsoft.FSharp.Collections.FSharpSet{System.Int32})">
+<summary>
+ function extracting information from block of command
+</summary>
+</member>
+<member name="M:BlockGenerator.analyzeDO(Lang.GuardedCmd,Microsoft.FSharp.Collections.FSharpSet{System.Int32})">
+<summary>
+ function extracting information from Do command
+</summary>
+</member>
+<member name="M:BlockGenerator.analyzeGC(Lang.GuardedCmd,Microsoft.FSharp.Collections.FSharpSet{System.Int32},Microsoft.FSharp.Collections.FSharpSet{System.Int32})">
+<summary>
+ function extracting information from GC command
+</summary>
+</member>
+<member name="M:BlockGenerator.analyzeComplexGC(Lang.GuardedCmd,Lang.GuardedCmd,Microsoft.FSharp.Collections.FSharpSet{System.Int32},Microsoft.FSharp.Collections.FSharpSet{System.Int32})">
+<summary>
+ function extracting information from complex GC command
+</summary>
+</member>
+<member name="M:BlockGenerator.analyzeSingleGC(Lang.Expr,Lang.Cmd,System.Int32,Microsoft.FSharp.Collections.FSharpSet{System.Int32},Microsoft.FSharp.Collections.FSharpSet{System.Int32})">
+<summary>
+ function extracting information from  single GC command
+</summary>
+</member>
+<member name="M:BlockGenerator.analyzeSequence(Lang.Cmd,Lang.Cmd,Microsoft.FSharp.Collections.FSharpSet{System.Int32})">
+<summary>
+ function extracting information from sequence of commands
+</summary>
+</member>
+<member name="M:BlockGenerator.generateWriteBlock(Lang.Expr,System.Int32,Microsoft.FSharp.Collections.FSharpSet{System.Int32})">
+<summary>
+ Function extracting information from write statement and generating block
+</summary>
+</member>
+<member name="M:BlockGenerator.generateReadBlock(System.String,System.Int32,Microsoft.FSharp.Collections.FSharpSet{System.Int32})">
+<summary>
+ function extracting information from read statement and generating block
+</summary>
+</member>
+<member name="M:BlockGenerator.generateAbortBlock``1(System.Int32,Microsoft.FSharp.Collections.FSharpSet{System.Int32})">
+<summary>
+ function extracting information from abort statement and generating block
+</summary>
+</member>
+<member name="M:BlockGenerator.generateSkipBlock(System.Int32,Microsoft.FSharp.Collections.FSharpSet{System.Int32})">
+<summary>
+ function extracting information from skip statement and generating block
+</summary>
+</member>
+<member name="M:BlockGenerator.generateAssignBlock(System.String,Lang.Expr,System.Int32,Microsoft.FSharp.Collections.FSharpSet{System.Int32})">
+<summary>
+ function extracting information from Asssign statement and generating block
+</summary>
+</member>
+<member name="M:BlockGenerator.parseFromFile(System.String)">
+<summary>
+ function for parsing file   
+</summary>
+</member>
+<member name="M:BlockGenerator.parseFormString(System.String)">
+<summary>
+ function for parsing the program
+</summary>
+</member>
+<member name="M:BlockGenerator.CloneBlocks(System.Collections.Generic.Dictionary{System.Int32,BlockDefinition.Block})">
+<summary>
+ function to get a clone of blocks
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="P:BlockGenerator.scope">
+<summary>
+ scope entered
+</summary>
+</member>
+<member name="P:BlockGenerator.underGuards">
+<summary>
+ list of guards the command is nested under
+</summary>
+</member>
+<member name="P:BlockGenerator.blocks">
+<summary>
+ holds the program blocks and corresponding start label
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:BlockGenerator.ParseError">
+<summary>
+ type of exception thrown if parse errror
+</summary>
+</member>
+<member name="T:BlockGenerator">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:ConstantFolding.State">
+<summary>
+ Type definition for the State of a variable. 
+ If it is Constant-&gt;CONST, Not a constant-&gt;TOP or Undefined -&gt;BOTTOM
+</summary>
+</member>
+<member name="M:ConstantFolding.constantFolding(System.Collections.Generic.Dictionary{System.Int32,BlockDefinition.Block})">
+<summary>
+ function to perform Constant Folding and returns the Folded program
+</summary>
+</member>
+<member name="M:ConstantFolding.foldGuard(BlockDefinition.Guard,Microsoft.FSharp.Collections.FSharpMap{System.String,ConstantFolding.State})">
+<summary>
+ Constant Folding of Guard
+</summary>
+</member>
+<member name="M:ConstantFolding.foldWrite(BlockDefinition.Write,Microsoft.FSharp.Collections.FSharpMap{System.String,ConstantFolding.State})">
+<summary>
+ Constant Folding of Write statements.
+</summary>
+</member>
+<member name="M:ConstantFolding.foldAssignment(BlockDefinition.Assignment,Microsoft.FSharp.Collections.FSharpMap{System.String,ConstantFolding.State})">
+<summary>
+ Constant Folding of Assignment
+</summary>
+</member>
+<member name="M:ConstantFolding.foldExpression(Lang.Expr,Microsoft.FSharp.Collections.FSharpMap{System.String,ConstantFolding.State})">
+<summary>
+ Constant folding of Expression
+</summary>
+</member>
+<member name="M:ConstantFolding.evaluateExpression(Lang.Expr)">
+<summary>
+ Function to evaluate expression
+</summary>
+</member>
+<member name="M:ConstantFolding.replaceConstants(Lang.Expr,Microsoft.FSharp.Collections.FSharpMap{System.String,ConstantFolding.State})">
+<summary>
+ Function to substitute the variables with constant in an expression
+</summary>
+</member>
+<member name="M:ConstantFolding.ConstantPropagation(System.Collections.Generic.Dictionary{System.Int32,BlockDefinition.Block})">
+<summary>
+ Calculating the Constant Propagation
+</summary>
+</member>
+<member name="M:ConstantFolding.CPtransfer(Microsoft.FSharp.Collections.FSharpSet{System.Tuple`2{System.String,ConstantFolding.State}},System.Int32,System.Collections.Generic.Dictionary{System.Int32,BlockDefinition.Block})">
+<summary>
+ Transfer function for Constant Propagation Analysis
+</summary>
+</member>
+<member name="M:ConstantFolding.getMapOfConstants(Microsoft.FSharp.Collections.FSharpMap{System.String,ConstantFolding.State})">
+<summary>
+ find the constant vaiables in the given cp_bullet
+</summary>
+</member>
+<member name="M:ConstantFolding.mapOfState(Microsoft.FSharp.Collections.FSharpSet{System.Tuple`2{System.String,ConstantFolding.State}})">
+<summary>
+ Function to determine the current State of each variable in the given CPcircle
+</summary>
+</member>
+<member name="M:ConstantFolding.initCP">
+<summary>
+ initial set of variables with their initial state for CP Analysis.
+ initially all variables have the state BOTTOM
+</summary>
+</member>
+<member name="M:ConstantFolding.findStateOfExpression(Microsoft.FSharp.Collections.FSharpMap{System.String,ConstantFolding.State},Lang.Expr)">
+<summary>
+ Function to perform arithmetic operations on variables of type State. 
+ Returns of the State type of the given expression
+</summary>
+</member>
+<member name="M:ConstantFolding.valueOfState(ConstantFolding.State)">
+<summary>
+ get the integer value of CONST state.
+</summary>
+</member>
+<member name="M:ConstantFolding.isConstant(ConstantFolding.State)">
+<summary>
+ Function to check if a variable is a constant or not
+</summary>
+</member>
+<member name="T:ConstantFolding">
+
+</member>
+<member name="M:DeadCodeElimination.deadCodeElimination(System.Collections.Generic.Dictionary{System.Int32,BlockDefinition.Block})">
+<summary>
+ Algorithm for Dead Code Elimination
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:DeadCodeElimination.LiveVariables(System.Collections.Generic.Dictionary{System.Int32,BlockDefinition.Block})">
+<summary>
+ Calculating live variable analysis
+</summary>
+</member>
+<member name="M:DeadCodeElimination.LVtransfer(Microsoft.FSharp.Collections.FSharpSet{System.String},System.Int32,System.Collections.Generic.Dictionary{System.Int32,BlockDefinition.Block})">
+<summary>
+ Live Variables analysis Transfer Function
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:DeadCodeElimination">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:DebugPrinting.blockToString(System.Collections.Generic.Dictionary{System.Int32,BlockDefinition.Block},System.Int32)">
+<summary>
+ Function printing a single block into a string
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:DebugPrinting.printBlocks(System.Collections.Generic.Dictionary{System.Int32,BlockDefinition.Block})">
+<summary>
+function to print the contents of blocks
+</summary>
+</member>
+<member name="T:DebugPrinting">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Lang">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:LangLexer">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:LangParser.prodIdxToNonTerminal(System.Int32)">
+<summary>
+ This function maps production indexes returned in syntax errors to strings representing the non terminal that would be produced by that production
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:LangParser">
+
+</member>
+<member name="M:MFP.MFP``1(Microsoft.FSharp.Collections.FSharpSet{System.Int32},System.Collections.Generic.IEnumerable{System.Tuple`2{System.Int32,System.Int32}},Microsoft.FSharp.Collections.FSharpSet{System.Int32},Microsoft.FSharp.Collections.FSharpSet{``0},Microsoft.FSharp.Core.FSharpFunc`2{Microsoft.FSharp.Collections.FSharpSet{``0},Microsoft.FSharp.Core.FSharpFunc`2{System.Int32,Microsoft.FSharp.Core.FSharpFunc`2{System.Collections.Generic.Dictionary{System.Int32,BlockDefinition.Block},Microsoft.FSharp.Collections.FSharpSet{``0}}}},System.Collections.Generic.Dictionary{System.Int32,BlockDefinition.Block})">
+<summary>
+ MFP algorithm for solving data flow equations
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:MFP.printFull``1(System.Collections.Generic.IEnumerable{``0})">
+<summary>
+ fun to print all the set contents    
+</summary>
+</member>
+<member name="P:MFP.printProgramDetails">
+<summary>
+ string to store the details of program execution for printing purpose  
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:MFP">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Main">
+
+</member>
+<member name="M:ProgramSlice.programSlice(System.Collections.Generic.Dictionary{System.Int32,BlockDefinition.Block},System.Int32)">
+<summary>
+ Program Slicing iterative algorithm.
+</summary>
+</member>
+<member name="M:ProgramSlice.containsElem``1(``0,Microsoft.FSharp.Collections.FSharpList{``0})">
+<summary>
+ function to check if a list contains an element
+</summary>
+</member>
+<member name="M:ProgramSlice.getAllGuards(BlockDefinition.Block)">
+<summary>
+ function to return all the sister guards of a guard block
+</summary>
+</member>
+<member name="M:ProgramSlice.ReachingDefinition(System.Collections.Generic.Dictionary{System.Int32,BlockDefinition.Block})">
+<summary>
+ Defining MFP call to calculate Reaching Definitions Analysis
+</summary>
+</member>
+<member name="M:ProgramSlice.RDtransfer(Microsoft.FSharp.Collections.FSharpSet{System.Tuple`2{System.String,System.Int32}},System.Int32,System.Collections.Generic.Dictionary{System.Int32,BlockDefinition.Block})">
+<summary>
+ Reaching Definitions analysis Transfer Function
+</summary>
+</member>
+<member name="M:ProgramSlice.extemalValue">
+<summary>
+ Initializing RD circle with {(x,?)|x in FV(Cmd*)}
+</summary>
+</member>
+<member name="T:ProgramSlice">
+
+</member>
+</members>
+</doc>

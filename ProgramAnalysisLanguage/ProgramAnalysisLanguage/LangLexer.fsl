@@ -1,0 +1,57 @@
+﻿// LangLexer.fsl
+
+
+{
+module LangLexer
+open System
+open LangParser
+open Microsoft.FSharp.Text.Lexing
+}
+
+let char        = ['a'-'z' 'A'-'Z']
+let digit       = ['0'-'9']
+let identifier  = char(char|digit|['_' '''])*
+let number		= digit(digit)*
+let whitespace  = ' ' | '\t'
+let newline     = '\r' '\n' | '\n' | '\r'
+
+rule tokenize = parse
+| whitespace { tokenize lexbuf }
+| newline { lexbuf.EndPos <- lexbuf.EndPos.NextLine; tokenize lexbuf; }
+| "read" { READ }
+| "end" { END }
+| "module" { MODULE }
+| "write" { WRITE }
+| "true" { TRUE }
+| "false" { FALSE }
+| "skip" { SKIP }
+| "abort" { ABORT }
+| "(" { LPAREN }
+| ")" { RPAREN }
+| "{" { LBRACK }
+| "}" { RBRACK }
+| "do" { DO }
+| "od" { OD }
+| "if" { IF }
+| "fi" { FI }
+| ":=" { ASGN }
+| "+" { ADD }
+| "-" { MINUS }
+| "*" { MUL }
+| "/" { DIV }
+| "|" { OR }
+| "&" { AND }
+| "!" { NOT }
+| ">" { GTN }
+| "<" { LTN }
+| ">=" { GEQ }
+| "<=" { LEQ }
+| "=" { EQ }
+| "!=" { NEQ }
+| ":" { COLON }
+| ";" { SEMICOLON }
+| "[]" { GUARD }
+| "->" { ARROW }
+| identifier { ID (String(System.Text.Encoding.ASCII.GetChars(lexbuf.Lexeme))) }
+| number { NUMBER (Int32.Parse(String(System.Text.Encoding.ASCII.GetChars(lexbuf.Lexeme)))) }
+| eof { EOF }
